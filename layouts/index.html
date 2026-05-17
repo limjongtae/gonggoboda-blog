@@ -1,0 +1,174 @@
+{{- define "main" -}}
+{{- $data := .Site.Data.today -}}
+{{- $totalPool := "" -}}{{- if $data -}}{{- $totalPool = $data.total_pool -}}{{- end -}}
+
+<style>
+  /* B안 home — assasup-like layout */
+  .gb-hero {
+    background: linear-gradient(135deg, #0366d6 0%, #044289 100%);
+    color: white;
+    padding: 48px 24px;
+    border-radius: 12px;
+    margin: 24px 0;
+    text-align: center;
+  }
+  .gb-hero h1 { font-size: 32px; margin: 0 0 8px 0; color: white; }
+  .gb-hero .lede { font-size: 16px; opacity: 0.92; margin-bottom: 20px; }
+  .gb-hero .pool-num { font-size: 42px; font-weight: bold; display: block; margin: 12px 0 4px; }
+  .gb-hero .pool-lbl { font-size: 13px; opacity: 0.8; }
+  .gb-hero .ctas { margin-top: 24px; }
+  .gb-hero .btn-primary {
+    display: inline-block; background: white; color: #0366d6;
+    padding: 12px 28px; border-radius: 6px; font-weight: 700;
+    text-decoration: none; font-size: 15px; margin: 4px;
+  }
+  .gb-hero .btn-secondary {
+    display: inline-block; background: transparent; color: white;
+    padding: 12px 28px; border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 6px; font-weight: 600; text-decoration: none;
+    font-size: 15px; margin: 4px;
+  }
+
+  .gb-section { margin: 40px 0; }
+  .gb-section h2 { font-size: 22px; margin-bottom: 16px; border-bottom: 2px solid #0366d6; padding-bottom: 6px; }
+
+  .gb-top5 { display: grid; gap: 12px; }
+  .gb-card {
+    background: var(--entry, #fff);
+    border: 1px solid var(--border, #e1e4e8);
+    border-radius: 10px; padding: 16px;
+    transition: transform .15s, box-shadow .15s;
+  }
+  .gb-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .gb-card .badges { margin-bottom: 8px; }
+  .gb-card .badge {
+    display: inline-block; font-size: 11px; padding: 2px 8px;
+    border-radius: 4px; margin-right: 4px; font-weight: 600;
+  }
+  .gb-card .badge-dday { background: #d73a49; color: white; }
+  .gb-card .badge-dday.far { background: #586069; }
+  .gb-card .badge-cat { background: #e7f3ff; color: #0366d6; }
+  .gb-card .badge-region { background: #f3f4f6; color: #444; }
+  .gb-card .title { font-size: 15px; font-weight: 600; margin: 6px 0 8px; color: var(--primary, #111); }
+  .gb-card .meta { font-size: 12px; color: var(--secondary, #666); line-height: 1.6; }
+  .gb-card .meta strong { color: var(--primary, #111); }
+
+  .gb-cats { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+  .gb-cat-tile {
+    background: var(--entry, #fff); border: 1px solid var(--border, #e1e4e8);
+    border-radius: 8px; padding: 14px; text-align: center; text-decoration: none;
+    color: var(--primary, #111); transition: border-color .15s, background .15s;
+  }
+  .gb-cat-tile:hover { border-color: #0366d6; background: #f6f8fa; }
+  .gb-cat-tile .cat-name { font-size: 14px; font-weight: 600; }
+  .gb-cat-tile .cat-count { font-size: 12px; color: var(--secondary, #666); margin-top: 4px; }
+
+  .gb-cta-mid {
+    background: #f6f8fa; border: 1px solid #e1e4e8; border-radius: 10px;
+    padding: 28px; text-align: center; margin: 40px 0;
+  }
+  .gb-cta-mid h3 { margin: 0 0 8px 0; font-size: 18px; }
+  .gb-cta-mid p { color: #586069; margin: 0 0 16px; font-size: 14px; }
+  .gb-cta-mid .btn {
+    display: inline-block; background: #0366d6; color: white;
+    padding: 12px 28px; border-radius: 6px; font-weight: 600;
+    text-decoration: none; font-size: 15px;
+  }
+</style>
+
+<!-- ── Hero ──────────────────────────────────────── -->
+<section class="gb-hero">
+  <h1>📋 공고보다</h1>
+  <div class="lede">매일 아침 8:30, 공공데이터포털 3 출처에서 자동 큐레이션</div>
+  {{ if $totalPool }}
+  <span class="pool-num">{{ $totalPool }}건</span>
+  <div class="pool-lbl">오늘 신청 가능한 지원사업·입찰 (중복 제거 후)</div>
+  {{ end }}
+  <div class="ctas">
+    <a class="btn-primary" href="{{ "/subscribe/" | relURL }}">📮 무료 구독하기 →</a>
+    <a class="btn-secondary" href="#today-top">오늘의 5선 보기 ↓</a>
+  </div>
+</section>
+
+<!-- ── 오늘의 5선 ──────────────────────────────────── -->
+{{ if and $data $data.daily_top }}
+<section class="gb-section" id="today-top">
+  <h2>🔥 오늘의 추천 (분야별 균형 5선)</h2>
+  <div class="gb-top5">
+    {{ range $data.daily_top }}
+    {{ $days := "" }}
+    {{ if and .deadline_end (ne .deadline_end "unknown") }}
+      {{ $end := time.AsTime .deadline_end "Asia/Seoul" }}
+      {{ $today := now }}
+      {{ $days = math.Floor (div (sub $end.Unix $today.Unix) 86400) }}
+    {{ end }}
+    <div class="gb-card">
+      <div class="badges">
+        {{ if and (ne $days "") (le $days 7) }}
+          <span class="badge badge-dday">D-{{ $days }}</span>
+        {{ else if ne $days "" }}
+          <span class="badge badge-dday far">D-{{ $days }}</span>
+        {{ end }}
+        {{ if .category }}<span class="badge badge-cat">{{ .category }}</span>{{ end }}
+        {{ if .region }}<span class="badge badge-region">{{ .region }}</span>{{ end }}
+      </div>
+      {{ if .url }}
+        <a class="title" href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a>
+      {{ else }}
+        <div class="title">{{ .title }}</div>
+      {{ end }}
+      <div class="meta">
+        <strong>{{ .organization }}</strong>
+        {{ if .target }} · 대상: {{ .target }}{{ end }}
+        {{ if .deadline_end }} · 마감 {{ .deadline_end }}{{ end }}
+        {{ if .amount_text }}<br>💰 {{ .amount_text }}{{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+<!-- ── 분야별 빠른 진입 ────────────────────────────── -->
+<section class="gb-section">
+  <h2>🗂 분야별 보기</h2>
+  <div class="gb-cats">
+    {{ $cats := slice "창업·사업화" "R&D·기술" "자금·금융" "판로·수출" "인력·고용" "시설·보육" "인증·특허" "입찰" }}
+    {{ range $cat := $cats }}
+    {{ $catCount := "" }}
+    {{ if $data }}{{ $catCount = index $data.categories $cat }}{{ end }}
+    <a class="gb-cat-tile" href="{{ printf "/categories/%s/" $cat | relURL }}">
+      <div class="cat-name">{{ $cat }}</div>
+      {{ if $catCount }}<div class="cat-count">{{ $catCount }}건</div>{{ end }}
+    </a>
+    {{ end }}
+  </div>
+</section>
+
+<!-- ── 중간 CTA ────────────────────────────────────── -->
+<section class="gb-cta-mid">
+  <h3>📮 매일 받아보세요</h3>
+  <p>매일 아침 8:30, 분야별 균형 5선만 추려서 메일로 도착합니다.<br>광고 없음 · 언제든 해지.</p>
+  <a class="btn" href="{{ "/subscribe/" | relURL }}">무료 구독하기 →</a>
+</section>
+
+<!-- ── 최근 발행 ───────────────────────────────────── -->
+<section class="gb-section">
+  <h2>📰 최근 발행</h2>
+  <div>
+    {{ range first 5 (where .Site.RegularPages "Type" "posts") }}
+      <div style="padding: 12px 0; border-bottom: 1px solid var(--border, #eee);">
+        <a href="{{ .Permalink }}" style="color: var(--primary, #111); text-decoration: none; font-weight: 500;">{{ .Title }}</a>
+        <div style="font-size: 12px; color: var(--secondary, #666); margin-top: 4px;">{{ .Date.Format "2006-01-02" }} · {{ .ReadingTime }} min read</div>
+      </div>
+    {{ end }}
+  </div>
+</section>
+
+<!-- ── 출처/면책 ───────────────────────────────────── -->
+<section style="margin: 40px 0 24px; padding: 16px; background: #f6f8fa; border-radius: 8px; font-size: 12px; color: #586069;">
+  <strong>출처:</strong> 공공데이터포털 — 중소벤처기업부 (기업마당) · 창업진흥원 (K-Startup) · 조달청 (나라장터)<br>
+  <strong>면책:</strong> 본 사이트는 정보 큐레이션 서비스이며, 신청 자격·마감일·세부 조건은 반드시 원문 링크에서 직접 확인하세요.
+</section>
+
+{{- end -}}

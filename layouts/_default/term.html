@@ -1,0 +1,89 @@
+{{- define "main" -}}
+{{- $cat := .Title -}}
+{{- $data := .Site.Data.today -}}
+
+<style>
+  .gb-term-hero {
+    background: #f6f8fa; border: 1px solid #e1e4e8;
+    border-radius: 10px; padding: 24px; margin: 24px 0;
+  }
+  .gb-term-hero h1 { margin: 0 0 8px; font-size: 26px; }
+  .gb-term-hero .desc { color: #586069; font-size: 14px; margin: 0; }
+  .gb-term-hero .count { display: inline-block; background: #0366d6; color: white;
+    padding: 4px 12px; border-radius: 12px; font-size: 13px; margin-top: 12px; }
+
+  .gb-term-today { margin: 32px 0; }
+  .gb-term-today h2 { font-size: 18px; margin-bottom: 12px; }
+  .gb-term-card {
+    background: var(--entry, #fff); border: 1px solid var(--border, #e1e4e8);
+    border-radius: 8px; padding: 14px; margin-bottom: 10px;
+  }
+  .gb-term-card .title { font-weight: 600; font-size: 14px; color: var(--primary, #111); text-decoration: none; }
+  .gb-term-card .meta { font-size: 12px; color: var(--secondary, #666); margin-top: 6px; }
+
+  .gb-term-archive { margin: 32px 0; }
+  .gb-term-archive h2 { font-size: 18px; margin-bottom: 12px; }
+  .gb-term-archive .post-row {
+    padding: 12px 0; border-bottom: 1px solid var(--border, #eee);
+  }
+  .gb-term-archive .post-row a { color: var(--primary, #111); text-decoration: none; font-weight: 500; }
+  .gb-term-archive .post-row .date { font-size: 12px; color: var(--secondary, #666); margin-top: 4px; }
+</style>
+
+<section class="gb-term-hero">
+  <h1>🗂 {{ $cat }}</h1>
+  <p class="desc">이 분야의 최신 공고와 발행 아카이브</p>
+  {{ if $data }}
+  {{ $catCount := index $data.categories $cat }}
+  {{ if $catCount }}<span class="count">오늘 풀 {{ $catCount }}건</span>{{ end }}
+  {{ end }}
+</section>
+
+{{ if and $data $data.daily_top }}
+<section class="gb-term-today">
+  <h2>🔥 오늘의 추천 ({{ $cat }})</h2>
+  {{ $matched := 0 }}
+  {{ range $data.daily_top }}
+    {{ if eq .category $cat }}
+    {{ $matched = add $matched 1 }}
+    <div class="gb-term-card">
+      {{ if .url }}
+        <a class="title" href="{{ .url }}" target="_blank" rel="noopener">{{ .title }}</a>
+      {{ else }}
+        <div class="title">{{ .title }}</div>
+      {{ end }}
+      <div class="meta">
+        <strong>{{ .organization }}</strong>
+        {{ if .region }} · {{ .region }}{{ end }}
+        {{ if .deadline_end }} · 마감 {{ .deadline_end }}{{ end }}
+        {{ if .amount_text }}<br>💰 {{ .amount_text }}{{ end }}
+      </div>
+    </div>
+    {{ end }}
+  {{ end }}
+  {{ if eq $matched 0 }}
+  <p style="color: #586069; font-size: 13px;">오늘 추천 5선에는 이 분야가 포함되지 않았습니다. 아래 발행 아카이브에서 과거 공고를 확인하세요.</p>
+  {{ end }}
+</section>
+{{ end }}
+
+<section class="gb-term-archive">
+  <h2>📰 발행 아카이브 ({{ len .Pages }}건)</h2>
+  {{ if .Pages }}
+    {{ range .Pages }}
+    <div class="post-row">
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+      <div class="date">{{ .Date.Format "2006-01-02" }}{{ if .ReadingTime }} · {{ .ReadingTime }} min read{{ end }}</div>
+    </div>
+    {{ end }}
+  {{ else }}
+    <p style="color: #586069; font-size: 13px;">아직 발행된 글이 없습니다.</p>
+  {{ end }}
+</section>
+
+<section style="margin: 40px 0 24px; padding: 16px; background: #f6f8fa; border-radius: 8px; font-size: 12px; color: #586069; text-align: center;">
+  <a href="{{ "/" | relURL }}" style="color: #0366d6; text-decoration: none;">← 홈으로</a> ·
+  <a href="{{ "/subscribe/" | relURL }}" style="color: #0366d6; text-decoration: none;">📮 무료 구독하기</a>
+</section>
+
+{{- end -}}
