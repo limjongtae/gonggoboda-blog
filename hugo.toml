@@ -30,12 +30,29 @@ buildExpired = false
 '''
 
   [params.homeInfoParams]
-    Title = "공고보다 GonggoBoda"
+    Title = "📋 공고보다"
     Content = """
-지원사업·입찰·창업공고를 매일 자동 큐레이션합니다.
-출처: 공공데이터포털 (기업마당·K-Startup·나라장터).
+### 오늘 신청 가능한 지원사업·입찰을 매일 큐레이션
 
-⚠️ 본 사이트는 정보 큐레이션 서비스이며, 게시되는 모든 공고는 원문 링크를 통해 확인하시기 바랍니다.
+매일 아침 **08:30 KST** — 공공데이터포털 3 출처 통합 풀에서 **분야별 균형 5선** 자동 발행.
+
+<div style="background:#f6f8fa;border:1px solid #e1e4e8;padding:20px;border-radius:8px;margin:24px 0;text-align:center;">
+  <div style="font-size:15px;margin-bottom:12px;"><strong>📮 매일 메일로 받기</strong></div>
+  <a href="/gonggoboda-blog/subscribe/" style="display:inline-block;background:#0366d6;color:white;padding:12px 28px;border-radius:6px;font-weight:600;text-decoration:none;font-size:15px;">무료 구독하기 →</a>
+  <div style="font-size:12px;color:#666;margin-top:10px;">매일 8:30 도착 · 광고 없음 · 언제든 해지</div>
+</div>
+
+#### 📊 매일 자동 갱신
+- **약 400~700건/일** — 3 출처 통합 + 중복 제거 후 풀
+- **분야별 5선** — 창업·사업화 / R&D·기술 / 자금·금융 / 판로·수출 / 인력·고용 / 시설·보육 / 인증·특허 / 입찰
+- **D-day 우선** — 마감 임박 + 신규 공고 우선 노출
+
+#### 🔗 출처
+- 중소벤처기업부 (기업마당) — 중소기업 지원사업 공고
+- 창업진흥원 — K-Startup 사업공고
+- 조달청 — 나라장터 입찰공고
+
+> ⚠️ 신청 자격·마감일·세부 조건은 반드시 **원문 링크** 에서 직접 확인하세요. 본 큐레이션은 정보 안내용입니다.
 """
 
   [[params.socialIcons]]
