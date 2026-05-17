@@ -1,73 +1,7 @@
 {
-  "date": "2026-05-17",
-  "generated_at": "2026-05-17T02:58:45Z",
-  "total_pool": 408,
-  "categories": {
-    "창업·사업화": 94,
-    "R&D·기술": 90,
-    "자금·금융": 17,
-    "판로·수출": 57,
-    "인력·고용": 19,
-    "기타": 22,
-    "입찰": 101,
-    "인증·특허": 1,
-    "시설·보육": 7
-  },
-  "daily_top": [
-    {
-      "title": "2026년 AI기반 디지털헬스케어 서비스 실증사업 스마트테크코리아 전시회 참가기업 모집 공고",
-      "organization": "세종테크노파크",
-      "category": "R&D·기술",
-      "region": "세종ㆍ대전ㆍ충북ㆍ충남",
-      "target": "중소기업",
-      "deadline_end": "2026-05-20",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000121957",
-      "source": "bizinfo",
-      "amount_text": null
-    },
-    {
-      "title": "2026년 수산식품 판촉강화 지원사업 참가업체 모집 공고",
-      "organization": "수협중앙회",
-      "category": "기타",
-      "region": "충남",
-      "target": "중소기업",
-      "deadline_end": "2026-05-20",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000121818",
-      "source": "bizinfo",
-      "amount_text": null
-    },
-    {
-      "title": "창원시 2026년 국가산단 기계ㆍ방산 분야 제조기업 대상 제조 DXㆍAX 확산 컨설팅 수혜기업 모집 공고",
-      "organization": "경남테크노파크",
-      "category": "시설·보육",
-      "region": "경남",
-      "target": "중소기업",
-      "deadline_end": "2026-05-29",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122053",
-      "source": "bizinfo",
-      "amount_text": null
-    },
-    {
-      "title": "2026년 직장문화개선 패키지 지원사업 참여기업 추가 모집 공고",
-      "organization": "충남경제진흥원",
-      "category": "인력·고용",
-      "region": "충남",
-      "target": "중소기업",
-      "deadline_end": "2026-05-19",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122073",
-      "source": "bizinfo",
-      "amount_text": null
-    },
-    {
-      "title": "2026년 성평등가족형 예비사회적기업 지정 계획 공고",
-      "organization": "한국사회적기업진흥원",
-      "category": "인증·특허",
-      "region": "성평등가족부",
-      "target": "사회적기업",
-      "deadline_end": "2026-06-01",
-      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000122055",
-      "source": "bizinfo",
-      "amount_text": null
-    }
-  ]
+  "date": "2026-05-18",
+  "generated_at": "2026-05-17T23:00:59Z",
+  "total_pool": 0,
+  "categories": {},
+  "daily_top": []
 }
