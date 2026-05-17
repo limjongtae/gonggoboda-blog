@@ -1,0 +1,58 @@
+baseURL = "https://limjongtae.github.io/gonggoboda-blog/"
+languageCode = "ko-KR"
+defaultContentLanguage = "ko"
+title = "공고보다 (GonggoBoda)"
+
+theme = "PaperMod"
+
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+[params]
+  env = "production"
+  description = "AI 가 매일 큐레이션하는 지원사업·입찰·창업공고. 출처는 공공데이터포털."
+  author = "GonggoBoda"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = false
+  ShowRssButtonInSectionTermList = true
+  ShowToc = false
+
+  [params.homeInfoParams]
+    Title = "공고보다 GonggoBoda"
+    Content = """
+지원사업·입찰·창업공고를 매일 자동 큐레이션합니다.
+출처: 공공데이터포털 (기업마당·K-Startup·나라장터).
+
+⚠️ 본 사이트는 정보 큐레이션 서비스이며, 게시되는 모든 공고는 원문 링크를 통해 확인하시기 바랍니다.
+"""
+
+  [[params.socialIcons]]
+    name = "rss"
+    url = "/index.xml"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+# 한국어 페이지네이션 / SEO
+[pagination]
+  pagerSize = 10
+
+[sitemap]
+  changefreq = "daily"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+# Naver 서치어드바이저 / Google Search Console 인증 메타태그는 build 시 사용자가 추가
