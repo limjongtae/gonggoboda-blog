@@ -45,6 +45,18 @@ buildExpired = false
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
+# 상단 메뉴
+[[menu.main]]
+  identifier = "subscribe"
+  name = "구독"
+  url = "/subscribe/"
+  weight = 10
+[[menu.main]]
+  identifier = "about"
+  name = "소개"
+  url = "/about/"
+  weight = 20
+
 [markup.goldmark.renderer]
   unsafe = true
 
