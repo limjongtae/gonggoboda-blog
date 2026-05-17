@@ -23,6 +23,12 @@ buildExpired = false
   ShowRssButtonInSectionTermList = true
   ShowToc = false
 
+  # 검색엔진 사이트 인증 (head 에 메타태그 자동 삽입)
+  [params.assets]
+    customHeadHTML = '''
+<meta name="google-site-verification" content="HrBm7lmqx6spILA5QeU-5gTRAXHZPYqoR2Uz3jTER7Y" />
+'''
+
   [params.homeInfoParams]
     Title = "공고보다 GonggoBoda"
     Content = """
