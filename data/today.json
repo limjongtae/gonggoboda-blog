@@ -1,7 +1,73 @@
 {
-  "date": "2026-05-18",
-  "generated_at": "2026-05-17T23:00:59Z",
-  "total_pool": 0,
-  "categories": {},
-  "daily_top": []
+  "date": "2026-05-19",
+  "generated_at": "2026-05-18T23:01:50Z",
+  "total_pool": 2398,
+  "categories": {
+    "R&D·기술": 280,
+    "창업·사업화": 554,
+    "인력·고용": 204,
+    "판로·수출": 204,
+    "기타": 408,
+    "시설·보육": 181,
+    "자금·금융": 231,
+    "입찰": 292,
+    "인증·특허": 44
+  },
+  "daily_top": [
+    {
+      "title": "2026년 녹색·신기술·신제품 인증을 위한 실무교육 안내",
+      "organization": "창업진흥원",
+      "category": "R&D·기술",
+      "region": "서울",
+      "target": "예비창업자, 1년미만, 2년미만, 3년미만, 5년미만, 7년미만, 10년미만",
+      "deadline_end": "2026-05-21",
+      "url": "nigt.re.kr/gtck/jungbomadang.do?mode=view&articleNo=4562&article.offset=0&articleLimit=10",
+      "source": "kstartup",
+      "amount_text": null
+    },
+    {
+      "title": "2026년 경북세일페스타 TV홈쇼핑 신규입점 및 판매 참여기업 모집 공고",
+      "organization": "경상북도경제진흥원",
+      "category": "기타",
+      "region": "경북",
+      "target": "중소기업",
+      "deadline_end": "2026-05-22",
+      "url": "https://www.bizinfo.go.kr/sii/siia/selectSIIA200Detail.do?pblancId=PBLN_000000000121844",
+      "source": "bizinfo",
+      "amount_text": "신청 바랍니다. ☞ 전년도 매출액 10억원 이상인 도내 중소기업 및 소상공인"
+    },
+    {
+      "title": "[LH한국토지주택공사] 판교제2테크노밸리 기업지원허브 업무지원시설 임대 입점기업 모집 공고",
+      "organization": "창업진흥원",
+      "category": "시설·보육",
+      "region": "경기",
+      "target": "예비창업자, 1년미만, 2년미만, 3년미만, 5년미만, 7년미만, 10년미만",
+      "deadline_end": "2026-05-20",
+      "url": "apply.lh.or.kr/lhapply/apply/wt/wrtanc/selectWrtancList.do?mi=1069",
+      "source": "kstartup",
+      "amount_text": null
+    },
+    {
+      "title": "[KEA] 2026년도 IoT제품 개발 및 데이터 분석 수요기업 모집",
+      "organization": "창업진흥원",
+      "category": "인력·고용",
+      "region": "전국",
+      "target": "1년미만, 2년미만, 3년미만, 5년미만, 7년미만, 10년미만",
+      "deadline_end": "2026-05-20",
+      "url": "www.gokea.org/core/?cid=47&uid=52551&page=1&role=view",
+      "source": "kstartup",
+      "amount_text": null
+    },
+    {
+      "title": "군수 품질인증 농가 포장재 지원",
+      "organization": "강원특별자치도 평창군",
+      "category": "인증·특허",
+      "region": "강원특별자치도",
+      "target": "○ 관내 군수 품질인증 사용 승인 농가",
+      "deadline_end": "2025-01-31",
+      "url": "https://www.gov.kr/portal/rcvfvrSvc/dtlEx/428000000117",
+      "source": "gov24",
+      "amount_text": null
+    }
+  ]
 }
