@@ -1,19 +1,30 @@
 {
-  "date": "2026-05-21",
-  "generated_at": "2026-05-20T23:00:47Z",
-  "total_pool": 2174,
+  "date": "2026-05-22",
+  "generated_at": "2026-05-21T23:01:29Z",
+  "total_pool": 2156,
   "categories": {
+    "판로·수출": 195,
     "R&D·기술": 256,
-    "창업·사업화": 472,
-    "자금·금융": 229,
-    "판로·수출": 196,
+    "창업·사업화": 480,
     "인증·특허": 36,
-    "인력·고용": 201,
+    "시설·보육": 176,
+    "인력·고용": 202,
     "기타": 392,
-    "시설·보육": 173,
-    "입찰": 219
+    "자금·금융": 229,
+    "입찰": 190
   },
   "daily_top": [
+    {
+      "title": "[강원창조경제혁신센터] 2026 강원BRIDGE X 창업BuS 5월 월간 데모데이",
+      "organization": "창업진흥원",
+      "category": "창업·사업화",
+      "region": "전국",
+      "target": "예비창업자, 1년미만, 2년미만, 3년미만, 5년미만, 7년미만, 10년미만",
+      "deadline_end": "2026-05-25",
+      "url": "https://ccei.creativekorea.or.kr/gangwon/custom/notice_view.do?no=37910&rnum=1585&kind=my&sPtime=my",
+      "source": "kstartup",
+      "amount_text": null
+    },
     {
       "title": "(추가)『 2026 유니콘 브릿지 with 아이티센 』 참여 스타트업 모집 - 투자&TIPS 연계",
       "organization": "창업진흥원",
@@ -26,6 +37,17 @@
       "amount_text": "기업 5개사 대상 총 10억원 내외 아이티센 전략적 투자, TIPS 검토 및 추"
     },
     {
+      "title": "AI 솔로프러너 프리오픈 참가자 모집",
+      "organization": "창업진흥원",
+      "category": "창업·사업화",
+      "region": "전국",
+      "target": "예비창업자, 3년미만",
+      "deadline_end": "2026-05-25",
+      "url": "https://udimpact-ai-solopreneur.vercel.app/",
+      "source": "kstartup",
+      "amount_text": null
+    },
+    {
       "title": "2026년 글로벌 리테일 채널(인도네시아, 싱가포르) 진출사업 참여기업 모집",
       "organization": "창업진흥원",
       "category": "판로·수출",
@@ -33,28 +55,6 @@
       "target": "1년미만, 2년미만, 3년미만, 5년미만, 7년미만, 10년미만",
       "deadline_end": "2026-05-22",
       "url": "https://www.sba.seoul.kr/Pages/ContentsMenu/Company_Support_Detail.aspx?RID=745d6250-5a4f-f111-b404-d4f5ef4a1e33",
-      "source": "kstartup",
-      "amount_text": null
-    },
-    {
-      "title": "1인기업 & 예비/초기창업자 환영! 강동50+센터 공유사무실 입주자 모집(~26.5.22.(금))",
-      "organization": "창업진흥원",
-      "category": "창업·사업화",
-      "region": "서울",
-      "target": "예비창업자, 1년미만, 2년미만, 3년미만, 5년미만, 7년미만, 10년미만",
-      "deadline_end": "2026-05-22",
-      "url": "https://50plus.or.kr/gdc/detail.do?id=71262972",
-      "source": "kstartup",
-      "amount_text": null
-    },
-    {
-      "title": "[코레일유통/본사] 제2차 청년창업 제휴사업자 모집공고",
-      "organization": "창업진흥원",
-      "category": "창업·사업화",
-      "region": "전국",
-      "target": "예비창업자, 3년미만",
-      "deadline_end": "2026-05-22",
-      "url": "https://www.korailretail.com",
       "source": "kstartup",
       "amount_text": null
     },
@@ -92,35 +92,35 @@
       "amount_text": null
     },
     {
-      "title": "2026년 칠보체육관 청소용역",
-      "organization": "수원도시공사",
-      "category": "입찰",
-      "region": "전국",
-      "target": "N",
-      "deadline_end": "2026-05-22",
-      "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01518759&bidPbancOrd=000",
-      "source": "nara",
-      "amount_text": null
-    },
-    {
-      "title": "2026학년도 천안여자상업고등학교 2학년 수학여행 위탁용역 입찰공고",
-      "organization": "충청남도교육청 천안여자상업고등학교",
+      "title": "2026학년도 주산산업고등학교 1학년 수학여행 위탁 용역(2단계 규격 가격 동시) 입찰",
+      "organization": "충청남도교육청 주산산업고등학교",
       "category": "입찰",
       "region": "충남",
       "target": "N",
       "deadline_end": "2026-05-22",
-      "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01505140&bidPbancOrd=000",
+      "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01524010&bidPbancOrd=001",
       "source": "nara",
       "amount_text": null
     },
     {
-      "title": "레이저커팅기 장비교육",
+      "title": "전북권역 재활병원, 공공어린이 재활센터 연계 건립 사업 건설폐기물(폐보드) 처리용역",
+      "organization": "(재)예수병원유지재단",
+      "category": "입찰",
+      "region": "전국",
+      "target": "N",
+      "deadline_end": "2026-05-22",
+      "url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01524736&bidPbancOrd=000",
+      "source": "nara",
+      "amount_text": null
+    },
+    {
+      "title": "1인기업 & 예비/초기창업자 환영! 강동50+센터 공유사무실 입주자 모집(~26.5.22.(금))",
       "organization": "창업진흥원",
       "category": "창업·사업화",
-      "region": "전국",
+      "region": "서울",
       "target": "예비창업자, 1년미만, 2년미만, 3년미만, 5년미만, 7년미만, 10년미만",
-      "deadline_end": "2026-05-21",
-      "url": "https://www.k-startup.go.kr/web/contents/bizpbanc-ongoing.do?schM=view&pbancSn=177643",
+      "deadline_end": "2026-05-22",
+      "url": "https://50plus.or.kr/gdc/detail.do?id=71262972",
       "source": "kstartup",
       "amount_text": null
     }
